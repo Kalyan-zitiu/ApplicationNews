@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- 顶部Toolbar布局 -->
+    <androidx.appcompat.widget.Toolbar
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Orange">
+
+        <!-- 水平线性布局作为Toolbar的容器 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- 菜单图标 -->
+            <ImageView
+                android:id="@+id/btn_open_drawerLayout"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_menu_open_24"
+                android:contentDescription="@string/menu_icon_desc" />
+
+            <!-- 搜索框 -->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/white">
+
+                <!-- 搜索提示文字 -->
+                <EditText
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search_hint"
+                    android:paddingStart="16dp"
+                    android:contentDescription="@string/search_hint_desc" />
+            </RelativeLayout>
+
+            <!-- 搜索图标 -->
+            <ImageView
+                android:id="@+id/btn_search"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_search_24"
+                android:contentDescription="@string/search_icon_desc" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- TabLayout和ViewPager2布局 -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TabLayout用于显示标签页 -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            app:tabMode="scrollable"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="@color/Orange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+        <!-- ViewPager2用于滑动切换页面 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
